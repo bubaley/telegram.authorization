@@ -74,8 +74,8 @@ jobs:
           POSTGRES_DB: postgres
         options: >-
           --health-cmd="pg_isready"
-          --health-interval=10s
-          --health-timeout=5s
+          --health-interval=5s
+          --health-timeout=5suv run aerich upgrade
           --health-retries=5
 
     steps:
@@ -94,6 +94,9 @@ jobs:
 
       - name: Install packages
         run: uv sync --dev --locked
+
+      - name: Show database url
+        run: uv run python show_db.py
 
       - name: Run migrations
         run: uv run aerich upgrade
