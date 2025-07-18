@@ -21,7 +21,6 @@ concurrency:
 env:
   SECRET_KEY: test-secret-key
   ENCRYPTION_KEY: test-encryption-key
-  SQL_HOST: postgres
 
 jobs:
   lint-and-format:
