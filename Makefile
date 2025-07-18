@@ -16,13 +16,20 @@ r: run ## short run runserver
 # ----------- BASE COMMANDS ----------- #
 
 run: ## run runserver
-	uvicorn app.main:app --reload
+	uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
 
 lint: ## run lint
 	pre-commit run --all-files
 
 gunicorn: ## run gunicorn
 	gunicorn app.main:app --forwarded-allow-ips="*" -k uvicorn.workers.UvicornWorker --timeout=60 --workers=$(GUNICORN_WORKERS) --bind 0.0.0.0:8000
+
+migrate: ## run migrations
+	uv run aerich migrate
+
+upgrade: ## run upgrade
+	uv run aerich upgrade
+
 
 # ----------- PRODUCTION COMMANDS ----------- #
 

@@ -5,7 +5,8 @@ from tortoise.contrib.fastapi import register_tortoise
 from app.core.settings import settings
 
 MODELS = [
-    'app.domains.project.models',
+    'app.domains.bot.models',
+    'app.domains.link.models',
 ]
 
 TORTOISE_ORM = {
