@@ -12,7 +12,7 @@ concurrency:
 
 env:
   REGISTRY: cr.yandex
-  IMAGE_NAME: loyalhub-backend
+  IMAGE_NAME: telegram-authorization
 
 jobs:
   release:

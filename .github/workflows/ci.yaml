@@ -94,9 +94,6 @@ jobs:
       - name: Install packages
         run: uv sync --dev --locked
 
-      - name: Show database url
-        run: uv run python show_db.py
-
       - name: Run migrations
         run: uv run aerich upgrade
 
