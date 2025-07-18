@@ -17,7 +17,8 @@ x-app-defaults: &app_defaults
 services:
   app:
     <<: *app_defaults
-    build: .
+    # build: .
+    image: bubaley/telegram-authorization:latest
     command: make prod-gunicorn
     ports:
       - "${ENTRY_PORT:-15000}:8000"
