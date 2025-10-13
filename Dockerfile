@@ -12,7 +12,7 @@ RUN --mount=type=cache,target=/root/.cache/uv \
 
 # ---------------------- #
 
-FROM python:3.13-slim-bookworm
+FROM python:3.14-slim-bookworm
 
 ARG USER_ID=1000
 ARG GROUP_ID=1000
